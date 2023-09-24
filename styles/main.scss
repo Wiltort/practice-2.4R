@@ -1,0 +1,93 @@
+@import './_variables.scss';
+@import './_mixins.scss';
+@import './_extends.scss';
+
+html,
+body {
+  margin: 0;
+  font-family: Arial;
+  color: $color-white;
+}
+
+p,
+a {
+  font-size: $font-size-small;
+}
+
+img {
+    @include padding-left(30px);
+    height: 350px;
+    width: 550px;
+}
+
+ul {
+    @extend %no-list-style;
+}
+
+
+
+
+
+
+
+.container {
+  min-height: 100%;
+  display: flex;
+
+  .nav {
+    width: $nav-width;
+    min-width: $nav-min-width;
+    color: $main-background-color;
+    padding-top: $nav-padding-top;
+    padding-right: $nav-padding-right;
+    text-align: center;
+
+    h4 {
+      -webkit-margin-before: 0;
+      margin-left: 50px;
+    }
+  }
+
+  .main {
+    width: $container-width;
+    min-height: $main-min-height;
+    min-width: $main-min-width;
+    background-color: $main-background-color;
+
+    h1 {
+      -webkit-margin-before: 0;
+      font-size: 62px;
+      padding-top: 40px;
+      @include padding-left(30px);
+    }
+
+    video {
+      @include padding-left(30px);
+    }
+
+    p {
+      @include padding-left(30px);
+      width: calc(#{$container-width} 250px);
+      min-width: 550px;
+    }
+
+    a {
+      color: inherit;
+      @include padding-left(30px);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    ul {
+      @extend %no-list-style;
+
+      @include padding-left(30px);
+      li {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
